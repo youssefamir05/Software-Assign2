@@ -32,7 +32,3 @@ After saving an expense, the module triggers a budget check:
 - If spending ≥ 100% → Exhausted notification
 
 (Handled via `NotificationService`)
-
----
-
-## 🗂️ Files Included
