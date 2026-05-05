@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Up Your Budget"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp"/>
+
+    <EditText
+        android:id="@+id/etAllowance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Total Allowance (EGP)"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Date"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/btnStartDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pick Start Date"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="End Date"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/btnEndDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pick End Date"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Budgeting"/>
+
+</LinearLayout>

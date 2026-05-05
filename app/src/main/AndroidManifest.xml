@@ -11,6 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Masroofy">
+        <activity android:name=".ui.SetupActivity"/>
+        <activity android:name=".ui.DashboardActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
