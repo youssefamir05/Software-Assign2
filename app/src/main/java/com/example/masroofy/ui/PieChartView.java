@@ -56,7 +56,7 @@ public class PieChartView extends View {
 
     private void init() {
         float density = getResources().getDisplayMetrics().density;
-        textPaint.setColor(Color.BLACK); // Changed to BLACK for better visibility
+        textPaint.setColor(Color.WHITE);
         textPaint.setTextSize(LEGEND_TEXT_SIZE_SP * density);
         textPaint.setTextAlign(Paint.Align.LEFT);
         legendPaint.setStyle(Paint.Style.FILL);

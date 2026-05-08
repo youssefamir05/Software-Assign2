@@ -11,27 +11,45 @@
         android:background="@android:color/transparent"
         app:elevation="0dp">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:padding="24dp">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Welcome Back"
-                android:textColor="@color/text_secondary"
-                android:textSize="14sp" />
+                android:layout_alignParentStart="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome Back"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Masroofy Dashboard"
+                    android:textColor="@color/text_primary"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
             <TextView
+                android:id="@+id/btnResetBudget"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Masroofy Dashboard"
-                android:textColor="@color/text_primary"
-                android:textSize="24sp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="8dp"
+                android:text="Reset"
+                android:textColor="@color/error"
+                android:textSize="14sp"
                 android:textStyle="bold" />
-        </LinearLayout>
+        </RelativeLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -52,7 +70,9 @@
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="24dp"
                 app:cardElevation="4dp"
-                app:cardBackgroundColor="@color/primary">
+                app:cardBackgroundColor="@color/white"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/divider">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -64,7 +84,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="REMAINING BALANCE"
-                        android:textColor="@color/primary_light"
+                        android:textColor="@color/primary"
                         android:textSize="12sp"
                         android:letterSpacing="0.1"
                         android:textStyle="bold" />
@@ -74,7 +94,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0.00 EGP"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="36sp"
                         android:textStyle="bold"
                         android:layout_marginTop="4dp" />
@@ -82,7 +102,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="#33FFFFFF"
+                        android:background="@color/divider"
                         android:layout_marginVertical="16dp" />
 
                     <LinearLayout
@@ -99,8 +119,31 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:text="TOTAL BUDGET"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="10sp" />
+
+                            <TextView
+                                android:id="@+id/tvTotalAllowance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0.00 EGP"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:text="DAILY LIMIT"
-                                android:textColor="@color/primary_light"
+                                android:textColor="@color/text_secondary"
                                 android:textSize="10sp" />
 
                             <TextView
@@ -108,7 +151,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="0.00 EGP"
-                                android:textColor="@color/white"
+                                android:textColor="@color/black"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
@@ -123,7 +166,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="CYCLE END"
-                                android:textColor="@color/primary_light"
+                                android:textColor="@color/text_secondary"
                                 android:textSize="10sp" />
 
                             <TextView
@@ -131,7 +174,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Jan 31"
-                                android:textColor="@color/white"
+                                android:textColor="@color/black"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
@@ -157,8 +200,7 @@
                 android:layout_marginBottom="24dp"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="0dp"
-                app:strokeWidth="1dp"
-                app:strokeColor="@color/divider">
+                app:cardBackgroundColor="@color/text_primary">
 
                 <com.example.masroofy.ui.PieChartView
                     android:id="@+id/pieChartView"
@@ -217,16 +259,5 @@
         app:backgroundTint="@color/secondary"
         app:icon="@android:drawable/ic_input_add"
         app:iconTint="@color/white" />
-
-    <TextView
-        android:id="@+id/btnResetBudget"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:text="Reset"
-        android:textColor="@color/error"
-        android:textSize="12sp"
-        android:padding="8dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

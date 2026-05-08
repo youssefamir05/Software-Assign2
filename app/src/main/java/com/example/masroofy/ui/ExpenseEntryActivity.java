@@ -60,6 +60,12 @@ public class ExpenseEntryActivity extends AppCompatActivity {
             return;
         }
 
+        if (amount > cycle.getRemainingBalance()) {
+            amountInput.setError("Amount exceeds remaining budget!");
+            Toast.makeText(this, "Insufficient balance!", Toast.LENGTH_LONG).show();
+            return;
+        }
+
         // Create expense
         Expense expense = new Expense(amount, category, cycle.getId());
         String timestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date());

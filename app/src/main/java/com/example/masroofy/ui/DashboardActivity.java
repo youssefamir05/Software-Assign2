@@ -18,7 +18,7 @@ import java.util.Locale;
 public class DashboardActivity extends AppCompatActivity {
 
     private DashboardViewModel viewModel;
-    private TextView tvRemainingBalance, tvDailyLimit, tvDateRange, tvEmptyState;
+    private TextView tvRemainingBalance, tvDailyLimit, tvDateRange, tvEmptyState, tvTotalAllowance;
     private PieChartView pieChartView;
     private ExpenseAdapter expenseAdapter;
 
@@ -28,6 +28,7 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
 
         tvRemainingBalance = findViewById(R.id.tvRemainingBalance);
+        tvTotalAllowance = findViewById(R.id.tvTotalAllowance);
         tvDailyLimit = findViewById(R.id.tvDailyLimit);
         tvDateRange = findViewById(R.id.tvDateRange);
         tvEmptyState = findViewById(R.id.tvEmptyState);
@@ -83,6 +84,7 @@ public class DashboardActivity extends AppCompatActivity {
 
         if (viewModel.hasCycle()) {
             tvRemainingBalance.setText(String.format(Locale.getDefault(), "%.2f EGP", viewModel.getRemainingBalance()));
+            tvTotalAllowance.setText(String.format(Locale.getDefault(), "%.2f EGP", viewModel.getTotalAllowance()));
             tvDailyLimit.setText(String.format(Locale.getDefault(), "%.2f EGP", viewModel.getDailyLimit()));
             tvDateRange.setText(String.format("Ends %s", viewModel.getEndDate()));
             
