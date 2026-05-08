@@ -15,6 +15,10 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 
 import java.util.Locale;
 
+/**
+ * The main screen of the application.
+ * Displays the current budget status, a breakdown chart, and a list of recent expenses.
+ */
 public class DashboardActivity extends AppCompatActivity {
 
     private DashboardViewModel viewModel;

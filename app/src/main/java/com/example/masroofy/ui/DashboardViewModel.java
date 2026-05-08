@@ -5,13 +5,14 @@ import com.example.masroofy.model.BudgetCycle;
 import com.example.masroofy.model.Expense;
 import com.example.masroofy.utils.BudgetCalculator;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
+/**
+ * ViewModel for the Dashboard screen.
+ * Handles data logic, calculations, and provides state for the UI.
+ */
 public class DashboardViewModel {
 
     private final IDataRepository repository;
@@ -23,6 +24,9 @@ public class DashboardViewModel {
         this.repository = repository;
     }
 
+    /**
+     * Loads the current budget cycle and its expenses from the repository.
+     */
     public void loadData() {
         activeCycle = repository.getActiveCycle();
         if (activeCycle != null) {
@@ -30,10 +34,18 @@ public class DashboardViewModel {
         }
     }
 
+    /**
+     * Checks if there is an active budget cycle.
+     * @return True if a cycle exists.
+     */
     public boolean hasCycle() {
         return activeCycle != null;
     }
 
+    /**
+     * Calculates the daily spending limit for the current cycle.
+     * @return Safe daily spending limit.
+     */
     public float getDailyLimit() {
         if (activeCycle == null) return 0f;
         return BudgetCalculator.calcDailyLimit(
@@ -67,6 +79,10 @@ public class DashboardViewModel {
         return activeCycle.getId();
     }
 
+    /**
+     * Aggregates total spending for each category.
+     * @return A map where keys are categories and values are total spent.
+     */
     public Map<String, Float> getCategoryTotals() {
         Map<String, Float> totals = new HashMap<>();
         if (expenses == null) return totals;

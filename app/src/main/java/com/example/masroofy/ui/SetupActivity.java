@@ -15,6 +15,10 @@ import com.example.masroofy.model.BudgetCycle;
 import java.util.Calendar;
 import java.util.Locale;
 
+/**
+ * Activity for setting up a new budget cycle.
+ * Allows the user to input their total allowance and select the budget duration.
+ */
 public class SetupActivity extends AppCompatActivity {
 
     private String startDate, endDate;

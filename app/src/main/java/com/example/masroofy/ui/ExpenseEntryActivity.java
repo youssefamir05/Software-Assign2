@@ -18,6 +18,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+/**
+ * Activity for logging a new expense.
+ * Validates the input amount against the remaining budget before saving.
+ */
 public class ExpenseEntryActivity extends AppCompatActivity {
 
     private EditText amountInput;

@@ -12,6 +12,10 @@ import com.example.masroofy.model.Expense;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * SQLite implementation of the data repository.
+ * Manages the local database for budget cycles and expenses.
+ */
 public class DatabaseHelper extends SQLiteOpenHelper implements IDataRepository {
 
     private static final String DB_NAME = "masroofy.db";
@@ -30,7 +34,12 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataRepository 
         super(context, DB_NAME, null, DB_VERSION);
     }
 
-    /** Singleton — always use this to get the database */
+    /**
+     * Returns the singleton instance of DatabaseHelper.
+     *
+     * @param context Application context.
+     * @return The DatabaseHelper instance.
+     */
     public static synchronized DatabaseHelper getInstance(Context context) {
         if (instance == null)
             instance = new DatabaseHelper(context.getApplicationContext());
@@ -65,6 +74,11 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataRepository 
         onCreate(db);
     }
 
+    /**
+     * Saves a new budget cycle to the database.
+     *
+     * @param cycle The budget cycle to save.
+     */
     @Override
     public void saveBudgetCycle(BudgetCycle cycle) {
         SQLiteDatabase db = getWritableDatabase();
@@ -76,6 +90,11 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataRepository 
         db.insert(TABLE_CYCLE, null, cv);
     }
 
+    /**
+     * Retrieves the most recently created budget cycle.
+     *
+     * @return The active BudgetCycle, or null if none exists.
+     */
     @Override
     public BudgetCycle getActiveCycle() {
         SQLiteDatabase db = getReadableDatabase();
@@ -96,6 +115,12 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataRepository 
         return null;
     }
 
+    /**
+     * Updates the remaining balance of a specific budget cycle.
+     *
+     * @param cycleId    The ID of the cycle to update.
+     * @param newBalance The new remaining balance.
+     */
     @Override
     public void updateRemainingBalance(int cycleId, float newBalance) {
         SQLiteDatabase db = getWritableDatabase();
@@ -105,6 +130,11 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataRepository 
                 new String[]{String.valueOf(cycleId)});
     }
 
+    /**
+     * Inserts a new expense record.
+     *
+     * @param expense The expense to record.
+     */
     @Override
     public void insertExpense(Expense expense) {
         SQLiteDatabase db = getWritableDatabase();
@@ -117,6 +147,12 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataRepository 
         db.insert(TABLE_EXPENSE, null, cv);
     }
 
+    /**
+     * Retrieves all expenses associated with a specific budget cycle.
+     *
+     * @param cycleId The ID of the budget cycle.
+     * @return A list of expenses.
+     */
     @Override
     public List<Expense> getAllExpenses(int cycleId) {
         List<Expense> list = new ArrayList<>();
@@ -139,6 +175,11 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataRepository 
         return list;
     }
 
+    /**
+     * Deletes a specific expense record by its ID.
+     *
+     * @param expenseId The ID of the expense to delete.
+     */
     @Override
     public void deleteExpense(int expenseId) {
         SQLiteDatabase db = getWritableDatabase();
@@ -146,6 +187,9 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataRepository 
                 new String[]{String.valueOf(expenseId)});
     }
 
+    /**
+     * Deletes all data from the database (budget cycles and expenses).
+     */
     @Override
     public void clearAllData() {
         SQLiteDatabase db = getWritableDatabase();

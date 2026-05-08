@@ -1,4 +1,9 @@
 package com.example.masroofy.model;
+
+/**
+ * Represents an individual expense item.
+ * Contains details such as amount, category, time of expenditure, and associated budget cycle.
+ */
 public class Expense {
     private int expenseId;
     private float amount;
@@ -7,6 +12,13 @@ public class Expense {
     private int cycleId;
     private String note;
 
+    /**
+     * Constructs a new Expense.
+     *
+     * @param amount   The cost of the expense.
+     * @param category The category of the expense (e.g., Food, Transport).
+     * @param cycleId  The ID of the budget cycle this expense belongs to.
+     */
     public Expense(float amount, String category, int cycleId) {
         this.amount = amount;
         this.category = category;

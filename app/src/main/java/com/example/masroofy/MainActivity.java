@@ -15,6 +15,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+/**
+ * The entry point of the application.
+ * Determines whether to show the Setup screen or the Dashboard based on the presence of a budget cycle.
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
