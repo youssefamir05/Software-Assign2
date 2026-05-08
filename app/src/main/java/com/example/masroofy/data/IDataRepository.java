@@ -14,4 +14,5 @@ public interface IDataRepository {
     List<Expense> getAllExpenses(int cycleId);
     void deleteExpense(int expenseId);
     void updateRemainingBalance(int cycleId, float newBalance);
+    void clearAllData();
 }

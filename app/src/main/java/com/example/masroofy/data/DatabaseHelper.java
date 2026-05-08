@@ -145,4 +145,11 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataRepository 
         db.delete(TABLE_EXPENSE, "expense_id=?",
                 new String[]{String.valueOf(expenseId)});
     }
+
+    @Override
+    public void clearAllData() {
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(TABLE_EXPENSE, null, null);
+        db.delete(TABLE_CYCLE, null, null);
+    }
 }

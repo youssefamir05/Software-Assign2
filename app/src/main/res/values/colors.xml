@@ -2,4 +2,23 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Emerald Palette -->
+    <color name="primary">#059669</color>
+    <color name="primary_dark">#047857</color>
+    <color name="primary_light">#D1FAE5</color>
+
+    <!-- Sky Palette -->
+    <color name="secondary">#0EA5E9</color>
+
+    <!-- Slate Palette -->
+    <color name="background">#F8FAFC</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="text_primary">#1E293B</color>
+    <color name="text_secondary">#64748B</color>
+
+    <!-- Others -->
+    <color name="error">#EF4444</color>
+    <color name="success">#22C55E</color>
+    <color name="divider">#E2E8F0</color>
 </resources>

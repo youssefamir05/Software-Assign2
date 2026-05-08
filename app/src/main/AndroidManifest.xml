@@ -13,6 +13,7 @@
         android:theme="@style/Theme.Masroofy">
         <activity android:name=".ui.SetupActivity"/>
         <activity android:name=".ui.DashboardActivity"/>
+        <activity android:name=".ui.ExpenseEntryActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
