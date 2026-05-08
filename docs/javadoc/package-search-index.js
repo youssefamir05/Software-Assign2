@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.example.masroofy"},{"l":"com.example.masroofy.data"},{"l":"com.example.masroofy.model"},{"l":"com.example.masroofy.ui"},{"l":"com.example.masroofy.utils"}];updateSearchResults();
